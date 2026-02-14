@@ -1699,7 +1699,7 @@ export default function Home() {
                   transition={{ delay: 0.7, duration: 0.5 }}
                 >
                   <label className="block text-foreground font-medium mb-2">
-                    3. What's the mood? 💫
+                    3. What&apos;s the mood? 💫
                   </label>
                   <select
                     value={mood}
@@ -1746,7 +1746,7 @@ export default function Home() {
                   transition={{ delay: 0.9, duration: 0.5 }}
                 >
                   <label className="block text-foreground font-medium mb-2">
-                    5. What's the weather? 🌤️
+                    5. What&apos;s the weather? 🌤️
                   </label>
                   <select
                     value={weather}
@@ -1769,7 +1769,7 @@ export default function Home() {
                   transition={{ delay: 1.0, duration: 0.5 }}
                 >
                   <label className="block text-foreground font-medium mb-2">
-                    6. What's the outfit style? 👗
+                    6. What&apos;s the outfit style? 👗
                   </label>
                   <select
                     value={outfitStyle}
@@ -1899,7 +1899,7 @@ export default function Home() {
                 transition={{ delay: 0.5 }}
                 className="text-foreground-muted text-lg"
               >
-                We're crafting a beautiful romantic story just for you...
+                We&apos;re crafting a beautiful romantic story just for you...
               </motion.p>
             </motion.div>
           </motion.div>
@@ -2175,7 +2175,7 @@ export default function Home() {
                         : "bg-white/10 text-foreground-muted cursor-not-allowed"
                     }`}
                   >
-                    Let's go ✨
+                    Let&apos;s go ✨
                   </motion.button>
                 </motion.div>
               </form>
@@ -2318,7 +2318,7 @@ export default function Home() {
                     transition={{ delay: 1.1, duration: 0.6 }}
                     className="text-2xl md:text-3xl font-semibold text-center text-foreground gradient-text"
                   >
-                    Now it's us ❤️
+                    Now it&apos;s us ❤️
                   </motion.h2>
                 </motion.div>
               ) : (
@@ -2476,7 +2476,7 @@ export default function Home() {
                   whileTap={{ scale: 0.95 }}
                   className="px-8 py-4 rounded-full bg-gradient-romantic text-white font-semibold text-lg shadow-lg hover:shadow-xl transition-shadow duration-300 w-full sm:w-auto min-w-[200px]"
                 >
-                  Let's start our story ✨
+                  Let&apos;s start our story ✨
                 </motion.button>
               </motion.div>
             </motion.div>
