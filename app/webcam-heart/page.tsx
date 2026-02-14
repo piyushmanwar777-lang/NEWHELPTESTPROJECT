@@ -109,12 +109,13 @@ export default function WebcamHeartPage() {
           console.log('HandPose initialized successfully with full model!');
         } catch (fallbackError: any) {
           console.error('Fallback also failed:', fallbackError);
-          // Try one more time without runtime option (uses MediaPipe runtime)
+          // Try one more time with MediaPipe runtime
           try {
             console.log('Trying with MediaPipe runtime (no tfjs)...');
             const fallbackModel2 = handPoseDetection.SupportedModels.MediaPipeHands;
             const detector = await handPoseDetection.createDetector(fallbackModel2, {
-              modelType: 'lite',
+              runtime: 'mediapipe' as const,
+              modelType: 'lite' as const,
               maxHands: 2,
             });
             modelRef.current = detector;
