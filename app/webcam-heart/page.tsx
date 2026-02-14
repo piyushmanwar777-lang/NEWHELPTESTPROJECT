@@ -69,9 +69,9 @@ export default function WebcamHeartPage() {
         
         // Use MediaPipeHands model (not MediaPipe!)
         const model = handPoseDetection.SupportedModels.MediaPipeHands;
-        const detectorConfig = {
-          runtime: 'tfjs',
-          modelType: 'lite', // Start with lite for faster loading
+        const detectorConfig: handPoseDetection.MediaPipeHandsTfjsModelConfig = {
+          runtime: 'tfjs' as const,
+          modelType: 'lite' as const, // Start with lite for faster loading
           maxHands: 2,
         };
         
