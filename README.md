@@ -1,36 +1,157 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 💕 Valentine Love Story App
 
-## Getting Started
+A romantic, interactive web application that generates personalized love stories with heart gesture detection using webcam.
 
-First, run the development server:
+## ✨ Features
 
+- **Interactive Proposal Screen**: Beautiful Yes/No proposal interface
+- **7-Question Story Generator**: Personalized romantic stories based on user preferences
+- **Multi-Language Support**: Stories in English, Hindi (हिंदी), and Marathi (मराठी)
+- **Text-to-Speech**: Listen to your story in the selected language
+- **Webcam Heart Gesture Detection**: Use hand gestures to create hearts on screen
+- **Cinematic Experience**: Beautiful animations and transitions
+
+## 🚀 Tech Stack
+
+- **Next.js 14** - React framework
+- **TypeScript** - Type-safe development
+- **TensorFlow.js** - Hand pose detection for heart gestures
+- **Google Gemini AI** - Story generation
+- **Framer Motion** - Smooth animations
+- **Tailwind CSS** - Styling
+
+## 📋 Prerequisites
+
+- Node.js 18+ installed
+- npm or yarn package manager
+- Google Gemini API key (for story generation)
+
+## 🛠️ Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/PiyushManwar07/TestProject.git
+cd TestProject
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Create a `.env.local` file in the root directory:
+```env
+GEMINI_API_KEY=your_gemini_api_key_here
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Run the development server:
+```bash
+npm run dev
+```
 
-## Learn More
+5. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-To learn more about Next.js, take a look at the following resources:
+## 🌐 Deployment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Deploy to Vercel (Recommended)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Push to GitHub** (if not already done):
+```bash
+git push -u origin main
+```
 
-## Deploy on Vercel
+2. **Sign up on Vercel**:
+   - Go to [vercel.com](https://vercel.com)
+   - Sign up with your GitHub account
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. **Import Project**:
+   - Click "Add New Project"
+   - Select your repository: `PiyushManwar07/TestProject`
+   - Click "Import"
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. **Configure Environment Variables**:
+   - In the "Environment Variables" section, add:
+     - Name: `GEMINI_API_KEY`
+     - Value: Your Gemini API key
+   - Select all environments (Production, Preview, Development)
+   - Click "Add"
+
+5. **Deploy**:
+   - Click "Deploy"
+   - Wait for the build to complete
+   - Your app will be live at `https://your-project.vercel.app`
+
+### Deploy to Netlify
+
+1. **Sign up on Netlify**:
+   - Go to [netlify.com](https://www.netlify.com)
+   - Sign up with your GitHub account
+
+2. **Import Project**:
+   - Click "Add new site" → "Import an existing project"
+   - Select your GitHub repository
+
+3. **Build Settings**:
+   - Build command: `npm run build`
+   - Publish directory: `.next`
+
+4. **Environment Variables**:
+   - Go to Site settings → Environment variables
+   - Add `GEMINI_API_KEY` with your API key value
+
+5. **Deploy**:
+   - Click "Deploy site"
+   - Your app will be live at `https://your-project.netlify.app`
+
+## 🔐 Environment Variables
+
+| Variable | Description | Required |
+|----------|-------------|----------|
+| `GEMINI_API_KEY` | Your Google Gemini API key for story generation | Yes |
+
+**⚠️ Important**: Never commit `.env.local` to Git. It's already in `.gitignore`.
+
+## 📱 Usage
+
+1. **Start the App**: Click "Yes" on the proposal screen
+2. **Answer Questions**: Fill out all 7 questions about your dream scenario
+3. **Choose Language**: Select English, Hindi, or Marathi
+4. **Generate Story**: Click "Create Our Story"
+5. **Listen**: Use the play button to hear your story
+6. **Experience**: Click "Experience with Heart Gesture" to use webcam features
+
+## 🎯 Features in Detail
+
+### Story Generation
+- Generates personalized romantic stories based on 7 user inputs
+- Supports multiple languages with proper script rendering
+- Fallback story generation if API fails
+
+### Heart Gesture Detection
+- Uses TensorFlow.js for hand pose detection
+- Detects heart gesture (two hands forming a heart)
+- Displays animated hearts in sequence
+- Particle effects for visual appeal
+
+### Text-to-Speech
+- Browser-based speech synthesis
+- Supports multiple languages
+- Play, pause, resume, and stop controls
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📄 License
+
+This project is open source and available under the MIT License.
+
+## 🙏 Acknowledgments
+
+- Google Gemini AI for story generation
+- TensorFlow.js for hand detection
+- Next.js team for the amazing framework
+
+---
+
+Made with ❤️ for love stories
