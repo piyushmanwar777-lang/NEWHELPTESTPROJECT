@@ -1,26 +1,115 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Romantic Color Palette */
+  --background: #1a0d1a;
+  --background-gradient-start: #1a0d1a;
+  --background-gradient-end: #2d1b2d;
+  --foreground: #f5e6f5;
+  --foreground-muted: #d4b3d4;
+  
+  /* Pink & Purple Romantic Colors */
+  --pink-50: #fdf2f8;
+  --pink-100: #fce7f3;
+  --pink-200: #fbcfe8;
+  --pink-300: #f9a8d4;
+  --pink-400: #f472b6;
+  --pink-500: #ec4899;
+  --pink-600: #db2777;
+  --pink-700: #be185d;
+  --pink-800: #9f1239;
+  --pink-900: #831843;
+  
+  --purple-50: #faf5ff;
+  --purple-100: #f3e8ff;
+  --purple-200: #e9d5ff;
+  --purple-300: #d8b4fe;
+  --purple-400: #c084fc;
+  --purple-500: #a855f7;
+  --purple-600: #9333ea;
+  --purple-700: #7e22ce;
+  --purple-800: #6b21a8;
+  --purple-900: #581c87;
+  
+  /* Gradient Colors */
+  --gradient-romantic-start: #ec4899;
+  --gradient-romantic-end: #a855f7;
+  --gradient-soft-start: #f9a8d4;
+  --gradient-soft-end: #c084fc;
+  
+  /* Accent Colors */
+  --accent-pink: #ec4899;
+  --accent-purple: #a855f7;
+  --accent-rose: #f472b6;
+  
+  /* Apple-style Typography */
+  --font-apple: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  @apply transition-colors duration-300;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
+  background: linear-gradient(135deg, var(--background-gradient-start) 0%, var(--background-gradient-end) 100%);
+  background-attachment: fixed;
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-apple);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+/* Smooth Page Transitions */
+.page-transition {
+  @apply transition-all duration-500 ease-in-out;
+}
+
+/* Romantic Gradient Utilities */
+.gradient-romantic {
+  background: linear-gradient(135deg, var(--gradient-romantic-start) 0%, var(--gradient-romantic-end) 100%);
+}
+
+.gradient-soft {
+  background: linear-gradient(135deg, var(--gradient-soft-start) 0%, var(--gradient-soft-end) 100%);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--gradient-romantic-start) 0%, var(--gradient-romantic-end) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Apple-style Typography Enhancements */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+/* Smooth Hover Effects */
+.hover-lift {
+  @apply transition-transform duration-300 ease-out;
+}
+
+.hover-lift:hover {
+  @apply -translate-y-1;
+}
+
+/* Glass Morphism Effect */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
