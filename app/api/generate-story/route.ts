@@ -4,18 +4,26 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 export const maxDuration = 60;
 
 export async function POST(request: NextRequest) {
+  let body: any = {};
+  let dreamDestination: string = "a beautiful place";
+  let timeOfDay: string = "evening";
+  let mood: string = "romantic";
+  let activity: string = "walking together";
+  let weather: string = "clear skies";
+  let outfitStyle: string = "elegant";
+  let specialEffect: string = "starlight";
+  let language: string = "english";
+  
   try {
-    const body = await request.json();
-    const { 
-      dreamDestination,
-      timeOfDay,
-      mood,
-      activity,
-      weather,
-      outfitStyle,
-      specialEffect,
-      language = "english"
-    } = body;
+    body = await request.json();
+    dreamDestination = body.dreamDestination || dreamDestination;
+    timeOfDay = body.timeOfDay || timeOfDay;
+    mood = body.mood || mood;
+    activity = body.activity || activity;
+    weather = body.weather || weather;
+    outfitStyle = body.outfitStyle || outfitStyle;
+    specialEffect = body.specialEffect || specialEffect;
+    language = body.language || language;
 
     // Validate all 7 answers are provided
     if (!dreamDestination || !timeOfDay || !mood || !activity || !weather || !outfitStyle || !specialEffect) {
@@ -134,14 +142,14 @@ REMEMBER: Write ONLY in ${targetLanguage}. Do NOT use English. Do NOT mix langua
     // Even if there's an error, try to generate a fallback story
     try {
       const fallbackStory = generateFallbackStory({
-        dreamDestination: body.dreamDestination || "a beautiful place",
-        timeOfDay: body.timeOfDay || "evening",
-        mood: body.mood || "romantic",
-        activity: body.activity || "walking together",
-        weather: body.weather || "clear skies",
-        outfitStyle: body.outfitStyle || "elegant",
-        specialEffect: body.specialEffect || "starlight",
-        language: body.language || "english"
+        dreamDestination,
+        timeOfDay,
+        mood,
+        activity,
+        weather,
+        outfitStyle,
+        specialEffect,
+        language
       });
       return NextResponse.json({ story: fallbackStory }, { status: 200 });
     } catch (fallbackError) {
